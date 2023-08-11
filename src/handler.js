@@ -43,13 +43,13 @@ const getAllNotesHandler = () => ({
 
 const getNoteByIdHandler = (request, h) => {
   const { id } = request.params;
-  const note = notes.filter((note) => note.id === id)[0];
+  const target = notes.filter((note) => note.id === id)[0];
 
-  if (note !== undefined) {
+  if (target !== undefined) {
     return {
       status: 'success',
       data: {
-        note,
+        target,
       },
     };
   }
@@ -113,5 +113,9 @@ const deleteNoteByIdHandler = (request, h) => {
 };
 
 module.exports = {
-  addNoteHandler, getAllNotesHandler, getNoteByIdHandler, editNoteByIdHandler, deleteNoteByIdHandler,
+  addNoteHandler,
+  getAllNotesHandler,
+  getNoteByIdHandler,
+  editNoteByIdHandler,
+  deleteNoteByIdHandler,
 };
